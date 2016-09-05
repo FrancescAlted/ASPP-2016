@@ -119,3 +119,24 @@ take in account the compile times.
 
 Using compressed containers (TBD)
 =================================
+
+The bcolz package that mainly following NumPy semantics and allowing you
+to work with compressed datasets as if they where uncompressed.  The
+`query-bcolz.py` script creates a bcolz ctable, a compressed version of an
+structured NumPy array, and an actual structured array.  Both are then
+queried and the timings are presented.
+
+9. Edit query-bcolz.py and look at how a ctable query works.
+
+  - Why do you think the pure NumPy approach works slower than bcolz?
+    Try to improve the NumPy version runtime.  Would you be able to beat
+    bcolz performance?
+
+  - Use different compressors in bcolz ('blosclz', 'lz4' and 'zlib') and
+    note the differences between them.  Which one would you use for maximum
+    performance?  Which one for dealing with larger tables than available
+    memory?  Which one shows a better balance?
+
+  - Raise the number of rows of the tables to 100 million and see how speed
+    scales.  In particular, what's the performance of a ctable query with
+    settings put to maximum performance related to an structured array?
