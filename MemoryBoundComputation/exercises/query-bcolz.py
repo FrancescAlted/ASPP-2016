@@ -17,6 +17,10 @@ cname = "blosclz"  # the compressor name, blosclz is usually the fastest in Blos
 #cname = "zlib"     # you may want to try this compressor classic too
 sexpr = "(2*x*x + .3*y*y + z + 1) < 100"  # the query to compute
 
+# Uncomment the next for disabling threading
+#ne.set_num_threads(1)
+#bcolz.set_nthreads(1)
+
 print("Creating inputs...")
 
 x = np.arange(N)
@@ -39,10 +43,6 @@ t0 = time()
 out = [r for r in t[eval(sexpr, {'x': nt['x'], 'y': nt['y'], 'z': nt['z']})]]
 print("Time for structured array-->  *** %.3fs ***" % (time() - t0,))
 #print("out-->", len(out), out[:10])
-
-# Uncomment the next for disabling threading
-#ne.set_num_threads(1)
-#bcolz.set_nthreads(1)
 
 t0 = time()
 #cout = t[t.eval(sexpr, cparams=cparams)]
