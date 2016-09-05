@@ -40,7 +40,7 @@ del x, y, z  # we are not going to need these arrays anymore
 print("Querying '%s' with 10^%d points" % (sexpr, int(math.log10(N))))
 
 t0 = time()
-out = [r for r in t[eval(sexpr, {'x': nt['x'], 'y': nt['y'], 'z': nt['z']})]]
+out = [r for r in nt[eval(sexpr, {'x': nt['x'], 'y': nt['y'], 'z': nt['z']})]]
 print("Time for structured array-->  *** %.3fs ***" % (time() - t0,))
 #print("out-->", len(out), out[:10])
 
