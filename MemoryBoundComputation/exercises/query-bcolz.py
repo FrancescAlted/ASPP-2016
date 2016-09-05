@@ -45,14 +45,9 @@ print("Time for structured array-->  *** %.3fs ***" % (time() - t0,))
 #print("out-->", len(out), out[:10])
 
 t0 = time()
-#cout = t[t.eval(sexpr, cparams=cparams)]
 cout = [r for r in t.where(sexpr)]
-#cout = [r['x'] for r in t.where(sexpr)]
-#cout = [r['y'] for r in t.where(sexpr, colnames=['x', 'y'])]
 print("Time for ctable--> *** %.3fs ***" % (time() - t0,))
 #print("cout-->", len(cout), cout[:10])
-
-#assert_array_equal(out, cout, "Arrays are not equal")
 
 print("ctable sizes--> uncompr: %.3f MB, compr: %.3f MB, ratio: %.3f" % (
     t.nbytes / 2.**20, t.cbytes/ 2**20., (t.nbytes / t.cbytes)))

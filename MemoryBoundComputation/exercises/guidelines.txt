@@ -137,6 +137,6 @@ queried and the timings are presented.
     performance?  Which one for dealing with larger tables than available
     memory?  Which one shows a better balance?
 
-  - Raise the number of rows of the tables to 100 million and see how speed
-    scales.  In particular, what's the performance of a ctable query with
-    settings put to maximum performance related to an structured array?
+  - Deactivate the multithreading in the script.  What's the performance of
+    a ctable query, with settings put to maximum performance, with respect to
+    an structured array?
