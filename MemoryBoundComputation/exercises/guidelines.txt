@@ -130,7 +130,7 @@ queried and the timings are presented.
 
   - Why do you think the pure NumPy approach works slower than bcolz?
     Try to improve the NumPy version runtime.  Would you be able to beat
-    bcolz performance?
+    bcolz performance?  Hint: Use numexpr.evaluate() for the expression.
 
   - Use different compressors in bcolz ('blosclz', 'lz4' and 'zlib') and
     note the differences between them.  Which one would you use for maximum
